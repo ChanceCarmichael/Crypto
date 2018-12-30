@@ -66,6 +66,40 @@ permutation(set(A,B,C,D,E), permute(C,W,X,Y,Z)) :- permutation(Set(A,B,D,E), per
 permutation(set(A,B,C,D,E), permute(D,W,X,Y,Z)) :- permutation(Set(A,B,C,E), permute(W,X,Y,Z)).
 permutation(set(A,B,C,D,E), permute(E,W,X,Y,Z)) :- permutation(Set(A,B,C,D), permute(W,X,Y,Z)).
 
+permutations(A,B) :-
+  permutation(set(A,B),permute(V,W)),
+  write(V),
+  write(W),
+  write(' '),
+  fail.
+
+permutations(A,B,C) :-
+  permutation(set(A,B,C),permute(V,W,X)),
+  write(V),
+  write(W),
+  write(X),
+  write(' '),
+  fail.
+
+permutations(A,B,C,D) :-
+  permutation(set(A,B,C,D),permute(V,W,X,Y)),
+  write(V),
+  write(W),  
+  write(X),
+  write(Y),
+  write(' '),
+  fail.
+
+permutations(A,B,C,D,E) :-
+  permutation(set(A,B,C,D,E),permute(V,W,X,Y,Z)),
+  write(V),
+  write(W),
+  write(X),
+  write(Y),
+  write(Z),
+  write(' '),
+  fail.
+
 combos(set(N1,N2,N3),combo(N1,N2),extras(N3)).
 combos(set(N1,N2,N3),combo(N2,N3),extras(N1)).
 combos(set(N1,N2,N3),combo(N1,N3),extras(N2)).
