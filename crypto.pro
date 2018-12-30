@@ -1,4 +1,4 @@
-:- consult('globalVariable.pro').
+:- consult('utilities/globalVariable.pro').
 
 establishCryptoProblemParameters :-
   declare(low, 0),
